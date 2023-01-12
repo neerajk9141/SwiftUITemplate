@@ -6,29 +6,34 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SearchPageView: View {
     
-    let names = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"]
     @State private var searchText = ""
+    
+    var viewModel = SearchViewModel()
        
     var body: some View {
         
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment:.leading,spacing: 20) {
-                    ForEach(searchResults, id: \.self) { name in
+                    ForEach(searchResults, id: \.self) { model in
                         NavigationLink {
                             VStack{
-                                Image(systemName: "person.fill")
-                                    .resizable()
-                                Text(name)
+                                if let url = URL(string:model.artworkUrl60 ?? ""){
+                                    WebImage(url: url)
+                                        .resizable()
+
+                                }
+                                    
                             }
                             
                         } label: {
                             
                             if !searchText.isEmpty{
-                                SearchItemView(image: "person.fill",title: name,subtitle: "description to test")
+                                SearchItemView(model: model)
                             }
                            
                         }.buttonStyle(PlainButtonStyle())
@@ -40,16 +45,17 @@ struct SearchPageView: View {
         
         .searchable(text: $searchText) {
             ForEach(searchResults, id: \.self) { result in
-                Text("\(result)").searchCompletion(result)
+                SearchItemView(model: result).searchCompletion(result)
             }
         }
     }
         
-        var searchResults: [String] {
+        var searchResults: [MusicResults] {
             if searchText.isEmpty {
-                return [""]
+                return []
             } else {
-                return names.filter { $0.contains(searchText) }
+                self.viewModel.getItunesItems(text: searchText)
+                return self.viewModel.model?.results ?? []
             }
         }
 }

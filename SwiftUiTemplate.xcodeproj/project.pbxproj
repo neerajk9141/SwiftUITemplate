@@ -16,6 +16,10 @@
 		1871CF1C296EA07100ACCA63 /* SwiftUiTemplateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871CF1B296EA07100ACCA63 /* SwiftUiTemplateUITestsLaunchTests.swift */; };
 		1871CF2D296EA12500ACCA63 /* SearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871CF2C296EA12500ACCA63 /* SearchItemView.swift */; };
 		1871CF2F296EA15200ACCA63 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871CF2E296EA15200ACCA63 /* SearchPageView.swift */; };
+		188F5A24296FD1B8001BABF2 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F5A23296FD1B8001BABF2 /* SearchDataModel.swift */; };
+		188F5A2829701AC3001BABF2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 188F5A2729701AC3001BABF2 /* SDWebImageSwiftUI */; };
+		18D097B8296EA5780083B171 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B7296EA5780083B171 /* NetworkManager.swift */; };
+		18D097BA296EBCAD0083B171 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B9296EBCAD0083B171 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		1871CF1B296EA07100ACCA63 /* SwiftUiTemplateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUiTemplateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1871CF2C296EA12500ACCA63 /* SearchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemView.swift; sourceTree = "<group>"; };
 		1871CF2E296EA15200ACCA63 /* SearchPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageView.swift; sourceTree = "<group>"; };
+		188F5A23296FD1B8001BABF2 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
+		188F5A25296FDFF0001BABF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		18D097B7296EA5780083B171 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		18D097B9296EBCAD0083B171 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188F5A2829701AC3001BABF2 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +107,8 @@
 		1871CEFD296EA06F00ACCA63 /* SwiftUiTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				188F5A25296FDFF0001BABF2 /* Info.plist */,
+				1871CF30296EA48C00ACCA63 /* New Group */,
 				1871CF28296EA0F100ACCA63 /* Search */,
 				1871CEFE296EA06F00ACCA63 /* SwiftUiTemplateApp.swift */,
 				1871CF00296EA06F00ACCA63 /* ContentView.swift */,
@@ -145,6 +156,7 @@
 		1871CF29296EA0F900ACCA63 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				18D097B9296EBCAD0083B171 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -152,6 +164,7 @@
 		1871CF2A296EA10200ACCA63 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				188F5A23296FD1B8001BABF2 /* SearchDataModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -163,6 +176,14 @@
 				1871CF2E296EA15200ACCA63 /* SearchPageView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		1871CF30296EA48C00ACCA63 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				18D097B7296EA5780083B171 /* NetworkManager.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +202,9 @@
 			dependencies = (
 			);
 			name = SwiftUiTemplate;
+			packageProductDependencies = (
+				188F5A2729701AC3001BABF2 /* SDWebImageSwiftUI */,
+			);
 			productName = SwiftUiTemplate;
 			productReference = 1871CEFB296EA06F00ACCA63 /* SwiftUiTemplate.app */;
 			productType = "com.apple.product-type.application";
@@ -253,6 +277,9 @@
 				Base,
 			);
 			mainGroup = 1871CEF2296EA06F00ACCA63;
+			packageReferences = (
+				188F5A2629701AC3001BABF2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 1871CEFC296EA06F00ACCA63 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,10 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D097BA296EBCAD0083B171 /* SearchViewModel.swift in Sources */,
 				1871CF01296EA06F00ACCA63 /* ContentView.swift in Sources */,
 				1871CF2F296EA15200ACCA63 /* SearchPageView.swift in Sources */,
+				18D097B8296EA5780083B171 /* NetworkManager.swift in Sources */,
 				1871CEFF296EA06F00ACCA63 /* SwiftUiTemplateApp.swift in Sources */,
 				1871CF2D296EA12500ACCA63 /* SearchItemView.swift in Sources */,
+				188F5A24296FD1B8001BABF2 /* SearchDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +489,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUiTemplate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUiTemplate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -487,6 +518,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUiTemplate/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUiTemplate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -617,6 +649,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		188F5A2629701AC3001BABF2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		188F5A2729701AC3001BABF2 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 188F5A2629701AC3001BABF2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1871CEF3296EA06F00ACCA63 /* Project object */;
 }

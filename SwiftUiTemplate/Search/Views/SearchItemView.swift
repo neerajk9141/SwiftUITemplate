@@ -6,25 +6,28 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct SearchItemView: View {
-    var image: String? = "person.fill"
-    var title:String?
-    var subtitle:String?
+    var model: MusicResults?
     
     var body: some View {
         
         HStack{
             
-            Image(systemName: image ?? "")
+            if let url = URL(string:model?.artworkUrl60 ?? ""){
+                WebImage(url: url)
+                    .resizable()
+
+            }
             
             VStack(alignment:.leading){
-                Text(title ?? "")
-                Text(subtitle ?? "")
+                Text(model?.collectionName ?? "")
+                Text(model?.shortDescription ?? "")
             }
             
         }
-        
+        .onAppear()
     }
 }
 
