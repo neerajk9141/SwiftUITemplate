@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		186BC7FE29764BD300671D44 /* MusicDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC7FD29764BD300671D44 /* MusicDetailsView.swift */; };
+		186BC801297693EC00671D44 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC800297693EC00671D44 /* Extensions.swift */; };
 		1871CEFF296EA06F00ACCA63 /* SwiftUiTemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871CEFE296EA06F00ACCA63 /* SwiftUiTemplateApp.swift */; };
 		1871CF03296EA07100ACCA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1871CF02296EA07100ACCA63 /* Assets.xcassets */; };
 		1871CF06296EA07100ACCA63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1871CF05296EA07100ACCA63 /* Preview Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		186BC7FD29764BD300671D44 /* MusicDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDetailsView.swift; sourceTree = "<group>"; };
+		186BC800297693EC00671D44 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1871CEFB296EA06F00ACCA63 /* SwiftUiTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUiTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1871CEFE296EA06F00ACCA63 /* SwiftUiTemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUiTemplateApp.swift; sourceTree = "<group>"; };
 		1871CF02296EA07100ACCA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186BC7FF297693DD00671D44 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				186BC800297693EC00671D44 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1871CEF2296EA06F00ACCA63 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		1871CEFD296EA06F00ACCA63 /* SwiftUiTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				186BC7FF297693DD00671D44 /* Extensions */,
 				188F5A25296FDFF0001BABF2 /* Info.plist */,
 				1871CF30296EA48C00ACCA63 /* Network */,
 				1871CF28296EA0F100ACCA63 /* Search */,
@@ -325,6 +336,7 @@
 				18D097BA296EBCAD0083B171 /* SearchViewModel.swift in Sources */,
 				1871CF2F296EA15200ACCA63 /* SearchPageView.swift in Sources */,
 				18D097B8296EA5780083B171 /* NetworkManager.swift in Sources */,
+				186BC801297693EC00671D44 /* Extensions.swift in Sources */,
 				1871CEFF296EA06F00ACCA63 /* SwiftUiTemplateApp.swift in Sources */,
 				1871CF2D296EA12500ACCA63 /* SearchItemView.swift in Sources */,
 				188F5A24296FD1B8001BABF2 /* SearchDataModel.swift in Sources */,

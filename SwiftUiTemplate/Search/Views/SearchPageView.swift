@@ -15,20 +15,25 @@ struct SearchPageView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                LazyVStack(alignment: .leading, spacing: 20) {
-                    ForEach(searchResults, id: \.self) { model in
-                        NavigationLink {
-                            MusicDetailsView(model: model)
+            ScrollView{
+                if searchResults.isEmpty{
+                    Text("No results to display.")
+                }else{
+                    LazyVStack(alignment: .leading, spacing: 20) {
+                        ForEach(searchResults, id: \.self) { model in
+                            NavigationLink {
+                                MusicDetailsView(model: model)
 
-                        } label: {
-                            if !searchText.isEmpty {
-                                SearchItemView(model: model)
-                            }
+                            } label: {
+                                if !searchText.isEmpty {
+                                    SearchItemView(model: model)
+                                }
 
-                        }.buttonStyle(PlainButtonStyle())
-                    }
-                }.padding()
+                            }.buttonStyle(PlainButtonStyle())
+                        }
+                    }.padding()
+
+                }
             }
             .navigationTitle("iTunes Search")
         }

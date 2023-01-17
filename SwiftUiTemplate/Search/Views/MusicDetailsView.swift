@@ -17,19 +17,22 @@ struct MusicDetailsView: View {
                 if let url = URL(string: model?.artworkUrl60 ?? "") {
                     WebImage(url: url)
                         .resizable()
-                        .frame(maxWidth: 300, maxHeight: 250)
-
+                        .scaledToFit()
                     Group {
-                        Text(model?.artistName ?? "")
-                        Text(model?.shortDescription ?? "")
-                        Text("\(model?.collectionPrice ?? 0.0)")
-                        Text(model?.longDescription ?? "")
-                        Text(model?.releaseDate ?? "")
-                        Text(model?.contentAdvisoryRating ?? "")
-                    }
+                        Text("Name: \(model?.trackName ?? "")")
+                        Text("Censored name: \(model?.collectionCensoredName ?? "")")
+                        Text("Collection Price: \(model?.collectionPrice ?? 0.0)")
+                        Text("Description: \(model?.longDescription ?? "")")
+                        Text("Release Date: \(getDate(date:model?.releaseDate ?? ""))")
+                        Text("Advisory Rating: \(model?.contentAdvisoryRating ?? "")")
+                    }.padding()
                 }
             }
         }
+    }
+    
+    func getDate(date: String)->String{
+        return date.toDate().toDateString(format: "dd-MM-yyyy HH:mm")
     }
 }
 
