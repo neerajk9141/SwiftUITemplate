@@ -5,33 +5,30 @@
 //  Created by Apple on 11/01/23.
 //
 
-import SwiftUI
 import SDWebImageSwiftUI
+import SwiftUI
 
 struct SearchPageView: View {
-    
     @State private var searchText = ""
-    
+
     var viewModel = SearchViewModel()
-    
+
     var body: some View {
-        
         NavigationStack {
             ScrollView {
-                LazyVStack(alignment:.leading,spacing: 20) {
+                LazyVStack(alignment: .leading, spacing: 20) {
                     ForEach(searchResults, id: \.self) { model in
                         NavigationLink {
                             MusicDetailsView(model: model)
-                            
+
                         } label: {
-                            
-                            if !searchText.isEmpty{
+                            if !searchText.isEmpty {
                                 SearchItemView(model: model)
                             }
-                            
+
                         }.buttonStyle(PlainButtonStyle())
                     }
-                }.padding( )
+                }.padding()
             }
             .navigationTitle("iTunes Search")
         }
@@ -41,13 +38,13 @@ struct SearchPageView: View {
             }
         }
     }
-    
+
     var searchResults: [MusicResults] {
         if searchText.isEmpty {
             return []
         } else {
-            self.viewModel.getItunesItems(text: searchText)
-            return self.viewModel.model?.results ?? []
+            viewModel.getItunesItems(text: searchText)
+            return viewModel.model?.results ?? []
         }
     }
 }

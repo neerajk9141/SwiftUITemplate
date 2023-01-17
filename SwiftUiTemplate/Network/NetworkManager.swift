@@ -5,25 +5,22 @@
 //  Created by Apple on 11/01/23.
 //
 
-import Foundation
 import Combine
+import Foundation
 
-final class NetworkManager{
-    
+final class NetworkManager {
     static let shared = NetworkManager()
-        
+
     private var cancellables = Set<AnyCancellable>()
-    
-    func startRequest<T: Codable>(queryItem:String,endpoint:EndPoints) -> Future<T,Error>{
-                
-        
+
+    func startRequest<T: Codable>(queryItem: String, endpoint: EndPoints) -> Future<T, Error> {
         var request = URLRequest(url: URL(string: endpoint.rawValue)!)
-        request.url?.append(queryItems: [URLQueryItem(name: "term", value: queryItem),URLQueryItem(name: "media", value: "music")])
-        
-        return Future<T,Error> { [weak self] req in
-            
+        request.url?.append(queryItems: [URLQueryItem(name: "term", value: queryItem), URLQueryItem(name: "media", value: "music")])
+
+        return Future<T, Error> { [weak self] req in
+
             guard let self = self else { return }
-            
+
             URLSession.shared.dataTaskPublisher(for: request)
                 .tryMap { data, response -> Data in
                     guard let httpResponse = response as? HTTPURLResponse, 200 ... 299 ~= httpResponse.statusCode else {
@@ -52,7 +49,7 @@ final class NetworkManager{
     }
 }
 
-enum EndPoints:String{
+enum EndPoints: String {
     case itunes = "https://itunes.apple.com/search?"
 }
 

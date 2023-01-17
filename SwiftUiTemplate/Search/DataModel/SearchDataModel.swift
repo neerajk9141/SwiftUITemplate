@@ -7,14 +7,12 @@
 
 import Foundation
 
-struct SearchDataModel: Codable{
-    
+struct SearchDataModel: Codable {
     let resultCount: Int
     let results: [MusicResults]
-
 }
 
-struct MusicResults:Codable, Hashable, Identifiable{
+struct MusicResults: Codable, Hashable, Identifiable {
     let id = UUID()
     let wrapperType: WrapperType?
     let kind: Kind?
@@ -64,12 +62,11 @@ struct MusicResults:Codable, Hashable, Identifiable{
         case trackHDRentalPrice = "trackHdRentalPrice"
         case contentAdvisoryRating, shortDescription, longDescription, hasITunesExtras, collectionArtistName
     }
-    
+
     static func == (lhs: MusicResults, rhs: MusicResults) -> Bool {
         lhs.id == rhs.id
     }
 }
-
 
 enum Explicitness: String, Codable {
     case notExplicit
@@ -87,11 +84,11 @@ enum Currency: String, Codable {
 
 enum Kind: String, Codable {
     case featureMovie = "feature-movie"
-    case song = "song"
+    case song
     case tvEpisode = "tv-episode"
 }
 
 enum WrapperType: String, Codable {
-    case track = "track"
+    case track
     case audioBook = "audiobook"
 }

@@ -5,28 +5,24 @@
 //  Created by Apple on 11/01/23.
 //
 
-import SwiftUI
 import SDWebImageSwiftUI
+import SwiftUI
 
 struct SearchItemView: View {
     var model: MusicResults?
-    
+
     var body: some View {
-        
-        HStack{
-            
-            if let url = URL(string:model?.artworkUrl60 ?? ""){
+        HStack {
+            if let url = URL(string: model?.artworkUrl60 ?? "") {
                 WebImage(url: url)
                     .resizable()
-                    .frame(maxWidth:50,maxHeight: 70)
-
+                    .frame(maxWidth: 50, maxHeight: 70)
             }
-            
-            VStack(alignment:.leading){
+
+            VStack(alignment: .leading) {
                 Text(model?.collectionName ?? "")
                 Text(model?.shortDescription ?? "")
             }
-            
         }
         .onAppear()
     }

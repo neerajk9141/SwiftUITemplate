@@ -5,22 +5,20 @@
 //  Created by Apple on 11/01/23.
 //
 
-import Foundation
 import Combine
+import Foundation
 
-class SearchViewModel:ObservableObject{
-    
+class SearchViewModel: ObservableObject {
     @Published var model: SearchDataModel?
-    
+
     private var cancellables = Set<AnyCancellable>()
-    
+
     private func getSongs(for text: String) -> Future<SearchDataModel?, Error> {
         return NetworkManager.shared.startRequest(queryItem: text, endpoint: EndPoints.itunes)
     }
-    
-    func getItunesItems(text:String){
-        
-        self.getSongs(for: text)
+
+    func getItunesItems(text: String) {
+        getSongs(for: text)
             .sink { completion in
                 switch completion {
                 case let .failure(error):
@@ -28,10 +26,8 @@ class SearchViewModel:ObservableObject{
                 case .finished:
                     print("Finished")
                 }
-            } receiveValue: { data in
-                self.model = data
+            } receiveValue: { [weak self] data in
+                self?.model = data
             }.store(in: &cancellables)
-
     }
-    
 }
