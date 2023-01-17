@@ -20,7 +20,7 @@ final class NetworkManager {
         return Future<T, Error> { [weak self] req in
 
             guard let self = self else { return }
-
+            
             URLSession.shared.dataTaskPublisher(for: request)
                 .tryMap { data, response -> Data in
                     guard let httpResponse = response as? HTTPURLResponse, 200 ... 299 ~= httpResponse.statusCode else {
