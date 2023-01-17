@@ -18,6 +18,7 @@ struct SearchItemView: View {
             if let url = URL(string:model?.artworkUrl60 ?? ""){
                 WebImage(url: url)
                     .resizable()
+                    .frame(maxWidth:50,maxHeight: 70)
 
             }
             

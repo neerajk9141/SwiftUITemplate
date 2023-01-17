@@ -13,7 +13,7 @@ struct SearchPageView: View {
     @State private var searchText = ""
     
     var viewModel = SearchViewModel()
-       
+    
     var body: some View {
         
         NavigationStack {
@@ -21,43 +21,35 @@ struct SearchPageView: View {
                 LazyVStack(alignment:.leading,spacing: 20) {
                     ForEach(searchResults, id: \.self) { model in
                         NavigationLink {
-                            VStack{
-                                if let url = URL(string:model.artworkUrl60 ?? ""){
-                                    WebImage(url: url)
-                                        .resizable()
-
-                                }
-                                    
-                            }
+                            MusicDetailsView(model: model)
                             
                         } label: {
                             
                             if !searchText.isEmpty{
                                 SearchItemView(model: model)
                             }
-                           
+                            
                         }.buttonStyle(PlainButtonStyle())
                     }
                 }.padding( )
             }
             .navigationTitle("iTunes Search")
         }
-        
         .searchable(text: $searchText) {
             ForEach(searchResults, id: \.self) { result in
                 SearchItemView(model: result).searchCompletion(result)
             }
         }
     }
-        
-        var searchResults: [MusicResults] {
-            if searchText.isEmpty {
-                return []
-            } else {
-                self.viewModel.getItunesItems(text: searchText)
-                return self.viewModel.model?.results ?? []
-            }
+    
+    var searchResults: [MusicResults] {
+        if searchText.isEmpty {
+            return []
+        } else {
+            self.viewModel.getItunesItems(text: searchText)
+            return self.viewModel.model?.results ?? []
         }
+    }
 }
 
 struct SearchPageView_Previews: PreviewProvider {
