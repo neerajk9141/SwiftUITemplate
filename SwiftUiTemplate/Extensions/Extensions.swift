@@ -7,20 +7,17 @@
 
 import Foundation
 
-extension String{
-    
-    func toDate()->Date{
+extension String {
+    func toDate() -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        return dateFormatter.date(from:self)!
+        return dateFormatter.date(from: self)!
     }
-    
-    
 }
 
-extension Date{
-    func toDateString(format:String)->String{
+extension Date {
+    func toDateString(format: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale.current
         dateFormatter.timeZone = TimeZone.current

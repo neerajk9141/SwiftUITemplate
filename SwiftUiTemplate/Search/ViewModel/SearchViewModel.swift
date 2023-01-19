@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-protocol ApiServiceProtocol{
+protocol ApiServiceProtocol {
     func getSongs(for text: String) -> Future<SearchDataModel?, Error>
 }
 
@@ -23,7 +23,6 @@ class SearchViewModel: ObservableObject {
                 switch completion {
                 case let .failure(error):
                     self.alertNotifier = error.localizedDescription
-                    break
                 case .finished:
                     break
                 }

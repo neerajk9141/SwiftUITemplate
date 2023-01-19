@@ -15,8 +15,8 @@ struct SearchPageView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView{
-                if !searchResults.isEmpty{
+            ScrollView {
+                if !searchResults.isEmpty {
                     LazyVStack(alignment: .leading, spacing: 20) {
                         ForEach(searchResults, id: \.self) { model in
                             NavigationLink {
@@ -27,7 +27,7 @@ struct SearchPageView: View {
                         }
                     }.padding()
 
-                }else{
+                } else {
                     searchText.isEmpty ? Text("No searches performed") : Text("No result found")
                 }
             }
@@ -38,15 +38,13 @@ struct SearchPageView: View {
         .onChange(of: searchText) { _ in
             viewModel.getItunesItems(text: searchText)
         }
-        .onChange(of: viewModel.alertNotifier, perform: { newValue in
+        .onChange(of: viewModel.alertNotifier, perform: { _ in
             showAlert.toggle()
         })
         .onSubmit(of: .search) {
             viewModel.getItunesItems(text: searchText)
         }
-        .alert(viewModel.alertNotifier ?? "", isPresented: $showAlert) {
-            
-        }
+        .alert(viewModel.alertNotifier ?? "", isPresented: $showAlert) {}
     }
 
     var searchResults: [MusicResults] {
