@@ -13,14 +13,25 @@ final class NetworkManager {
 
     private var cancellables = Set<AnyCancellable>()
 
-    func startRequest<T: Codable>(queryItem: String, endpoint: EndPoints) -> Future<T, Error> {
-        var request = URLRequest(url: URL(string: endpoint.rawValue)!)
-        request.url?.append(queryItems: [URLQueryItem(name: "term", value: queryItem), URLQueryItem(name: "media", value: "music")])
+    func startRequest<T: Codable>(endpoint: Endpoint) -> Future<T, Error> {
+        
+        var urlComponents = URLComponents()
+        urlComponents.host = endpoint.baseURL
+        urlComponents.path = endpoint.path
+        urlComponents.scheme = endpoint.scheme
+        urlComponents.queryItems = endpoint.params
+        urlComponents.port = endpoint.port
+        
 
         return Future<T, Error> { [weak self] req in
 
-            guard let self = self else { return }
-
+            guard let self = self, let url = urlComponents.url else {
+                return req(.failure(NetworkError.invalidURLError))
+            }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = endpoint.method
+            
             URLSession.shared.dataTaskPublisher(for: request)
                 .tryMap { data, response -> Data in
                     guard let httpResponse = response as? HTTPURLResponse, 200 ... 299 ~= httpResponse.statusCode else {
@@ -49,8 +60,11 @@ final class NetworkManager {
     }
 }
 
-enum EndPoints: String {
-    case itunes = "https://itunes.apple.com/search?"
+struct ApiManager: ApiServiceProtocol{
+    func getSongs(for text: String) -> Future<SearchDataModel?, Error> {
+        let endpoint = ITunesEndpoint.getSong(searchText: text)
+        return NetworkManager.shared.startRequest(endpoint: endpoint)
+    }
 }
 
 enum NetworkError: Error {
@@ -68,6 +82,74 @@ extension NetworkError: LocalizedError {
             return NSLocalizedString("Unknown status code", comment: "Invalid response")
         case .unknownError:
             return NSLocalizedString("Something went wrong", comment: "Unknown error")
+        }
+    }
+}
+
+protocol Endpoint {
+    // HTTP or HTTPS
+    var scheme: String { get }
+
+    // Example itunes.apple.com
+    var baseURL: String { get }
+
+    // /search/
+    var path: String { get }
+
+    // search?term=taylor+swift
+    var params: [URLQueryItem] { get }
+
+    var method: String { get }
+
+    var port: Int? { get }
+}
+
+enum ITunesEndpoint: Endpoint {
+    case getSong(searchText: String)
+    case failure
+    var scheme: String {
+        switch self {
+        default:
+            return CommandLine.arguments.contains("-debugServer") ? "http" : "https"
+        }
+    }
+
+    var baseURL: String {
+        switch self {
+        default:
+            return CommandLine.arguments.contains("-debugServer") ? "localhost" : "itunes.apple.com"
+        }
+    }
+
+    var path: String {
+        switch self {
+        case .failure: return "/fail"
+        case .getSong:
+            return "/search"
+        }
+    }
+
+    var port: Int? {
+        switch self {
+        default:
+            return CommandLine.arguments.contains("-debugServer") ? 9999 : nil
+        }
+    }
+
+    var params: [URLQueryItem] {
+        switch self {
+        case .failure:
+            return []
+        case let .getSong(searchTerm):
+            return [URLQueryItem(name: "term", value: searchTerm), URLQueryItem(name: "media", value: "music")]
+        }
+    }
+
+    var method: String {
+        switch self {
+        case .failure: return "get"
+        case .getSong:
+            return "get"
         }
     }
 }

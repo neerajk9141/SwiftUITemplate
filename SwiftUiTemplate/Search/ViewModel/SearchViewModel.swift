@@ -8,23 +8,24 @@
 import Combine
 import Foundation
 
+protocol ApiServiceProtocol{
+    func getSongs(for text: String) -> Future<SearchDataModel?, Error>
+}
+
 class SearchViewModel: ObservableObject {
     @Published var model: SearchDataModel?
-
+    @Published var alertNotifier: String?
     private var cancellables = Set<AnyCancellable>()
 
-    private func getSongs(for text: String) -> Future<SearchDataModel?, Error> {
-        return NetworkManager.shared.startRequest(queryItem: text, endpoint: EndPoints.itunes)
-    }
-
     func getItunesItems(text: String) {
-        getSongs(for: text)
+        ApiManager().getSongs(for: text)
             .sink { completion in
                 switch completion {
                 case let .failure(error):
-                    print(error.localizedDescription)
+                    self.alertNotifier = error.localizedDescription
+                    break
                 case .finished:
-                    print("Finished")
+                    break
                 }
             } receiveValue: { [weak self] data in
                 self?.model = data
