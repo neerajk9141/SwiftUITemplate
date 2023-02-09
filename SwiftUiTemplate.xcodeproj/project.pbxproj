@@ -20,11 +20,37 @@
 		187C102D29797DC30025119C /* TestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C102C29797DC30025119C /* TestCases.swift */; };
 		187C102E29797F9C0025119C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B9296EBCAD0083B171 /* SearchViewModel.swift */; };
 		187C102F29797FA00025119C /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F5A23296FD1B8001BABF2 /* SearchDataModel.swift */; };
-		187C103029797FA40025119C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B7296EA5780083B171 /* NetworkManager.swift */; };
 		187C103129797FA90025119C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC800297693EC00671D44 /* Extensions.swift */; };
 		187C1034297A74260025119C /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 187C1033297A74260025119C /* SDWebImageSwiftUI */; };
 		188F5A24296FD1B8001BABF2 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F5A23296FD1B8001BABF2 /* SearchDataModel.swift */; };
 		188F5A2829701AC3001BABF2 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 188F5A2729701AC3001BABF2 /* SDWebImageSwiftUI */; };
+		1890FFC829801BB500D2C4B3 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFC729801BB500D2C4B3 /* Endpoint.swift */; };
+		1890FFCA29801BD200D2C4B3 /* ItunesEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFC929801BD200D2C4B3 /* ItunesEndPoint.swift */; };
+		1890FFCC29801BEC00D2C4B3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCB29801BEC00D2C4B3 /* NetworkError.swift */; };
+		1890FFCE29801C0400D2C4B3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCD29801C0400D2C4B3 /* ApiManager.swift */; };
+		1890FFD029801C3E00D2C4B3 /* ApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCF29801C3E00D2C4B3 /* ApiServiceProtocol.swift */; };
+		189292E1299400DC00D0D2D9 /* TemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189292DF299400DC00D0D2D9 /* TemplateUITests.swift */; };
+		189292E22994027400D0D2D9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B7296EA5780083B171 /* NetworkManager.swift */; };
+		189292E32994027900D0D2D9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFC729801BB500D2C4B3 /* Endpoint.swift */; };
+		189292E42994027C00D0D2D9 /* ItunesEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFC929801BD200D2C4B3 /* ItunesEndPoint.swift */; };
+		189292E52994028100D0D2D9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCB29801BEC00D2C4B3 /* NetworkError.swift */; };
+		189292E62994028700D0D2D9 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCD29801C0400D2C4B3 /* ApiManager.swift */; };
+		189292E72994028A00D0D2D9 /* ApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCF29801C3E00D2C4B3 /* ApiServiceProtocol.swift */; };
+		189292E8299402A800D0D2D9 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B9296EBCAD0083B171 /* SearchViewModel.swift */; };
+		189292E9299402AB00D0D2D9 /* SearchDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188F5A23296FD1B8001BABF2 /* SearchDataModel.swift */; };
+		189292EA299402B500D0D2D9 /* SearchPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871CF2E296EA15200ACCA63 /* SearchPageView.swift */; };
+		189292EB299402B800D0D2D9 /* SearchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1871CF2C296EA12500ACCA63 /* SearchItemView.swift */; };
+		189292EC299402BB00D0D2D9 /* MusicDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC7FD29764BD300671D44 /* MusicDetailsView.swift */; };
+		189292EE2994B34600D0D2D9 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 189292ED2994B34600D0D2D9 /* SDWebImageSwiftUI */; };
+		189292EF2994B35C00D0D2D9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC800297693EC00671D44 /* Extensions.swift */; };
+		189292F02994B80F00D0D2D9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B7296EA5780083B171 /* NetworkManager.swift */; };
+		189292F12994B85B00D0D2D9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFC729801BB500D2C4B3 /* Endpoint.swift */; };
+		189292F22994B85E00D0D2D9 /* ItunesEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFC929801BD200D2C4B3 /* ItunesEndPoint.swift */; };
+		189292F32994B86300D0D2D9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCB29801BEC00D2C4B3 /* NetworkError.swift */; };
+		189292F42994B86500D0D2D9 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCD29801C0400D2C4B3 /* ApiManager.swift */; };
+		189292F52994B86800D0D2D9 /* ApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1890FFCF29801C3E00D2C4B3 /* ApiServiceProtocol.swift */; };
+		189D27B82983952200F39E8D /* UITestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D27B72983952200F39E8D /* UITestCases.swift */; };
+		189D27BA2983952200F39E8D /* UITestCasesLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D27B92983952200F39E8D /* UITestCasesLaunchTests.swift */; };
 		18D097B8296EA5780083B171 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B7296EA5780083B171 /* NetworkManager.swift */; };
 		18D097BA296EBCAD0083B171 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D097B9296EBCAD0083B171 /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +89,15 @@
 		187C102C29797DC30025119C /* TestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCases.swift; sourceTree = "<group>"; };
 		188F5A23296FD1B8001BABF2 /* SearchDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataModel.swift; sourceTree = "<group>"; };
 		188F5A25296FDFF0001BABF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1890FFC729801BB500D2C4B3 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		1890FFC929801BD200D2C4B3 /* ItunesEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItunesEndPoint.swift; sourceTree = "<group>"; };
+		1890FFCB29801BEC00D2C4B3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		1890FFCD29801C0400D2C4B3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		1890FFCF29801C3E00D2C4B3 /* ApiServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServiceProtocol.swift; sourceTree = "<group>"; };
+		189292DF299400DC00D0D2D9 /* TemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateUITests.swift; sourceTree = "<group>"; };
+		189D27B52983952200F39E8D /* UITestCases.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITestCases.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		189D27B72983952200F39E8D /* UITestCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCases.swift; sourceTree = "<group>"; };
+		189D27B92983952200F39E8D /* UITestCasesLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCasesLaunchTests.swift; sourceTree = "<group>"; };
 		18D097B7296EA5780083B171 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		18D097B9296EBCAD0083B171 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +126,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		189D27B22983952200F39E8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189292EE2994B34600D0D2D9 /* SDWebImageSwiftUI in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,6 +151,7 @@
 				1871CEFD296EA06F00ACCA63 /* SwiftUiTemplate */,
 				1871CF0E296EA07100ACCA63 /* SwiftUiTemplateTests */,
 				1871CF18296EA07100ACCA63 /* SwiftUiTemplateUITests */,
+				189D27B62983952200F39E8D /* UITestCases */,
 				1871CEFC296EA06F00ACCA63 /* Products */,
 				187C1032297A74260025119C /* Frameworks */,
 			);
@@ -119,6 +163,7 @@
 				1871CEFB296EA06F00ACCA63 /* SwiftUiTemplate.app */,
 				1871CF0B296EA07100ACCA63 /* SwiftUiTemplateTests.xctest */,
 				1871CF15296EA07100ACCA63 /* SwiftUiTemplateUITests.xctest */,
+				189D27B52983952200F39E8D /* UITestCases.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +248,11 @@
 			isa = PBXGroup;
 			children = (
 				18D097B7296EA5780083B171 /* NetworkManager.swift */,
+				1890FFC729801BB500D2C4B3 /* Endpoint.swift */,
+				1890FFC929801BD200D2C4B3 /* ItunesEndPoint.swift */,
+				1890FFCB29801BEC00D2C4B3 /* NetworkError.swift */,
+				1890FFCD29801C0400D2C4B3 /* ApiManager.swift */,
+				1890FFCF29801C3E00D2C4B3 /* ApiServiceProtocol.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -212,6 +262,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		189D27B62983952200F39E8D /* UITestCases */ = {
+			isa = PBXGroup;
+			children = (
+				189D27B72983952200F39E8D /* UITestCases.swift */,
+				189D27B92983952200F39E8D /* UITestCasesLaunchTests.swift */,
+				189292DF299400DC00D0D2D9 /* TemplateUITests.swift */,
+			);
+			path = UITestCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +336,26 @@
 			productReference = 1871CF15296EA07100ACCA63 /* SwiftUiTemplateUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		189D27B42983952200F39E8D /* UITestCases */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 189D27BF2983952200F39E8D /* Build configuration list for PBXNativeTarget "UITestCases" */;
+			buildPhases = (
+				189D27B12983952200F39E8D /* Sources */,
+				189D27B22983952200F39E8D /* Frameworks */,
+				189D27B32983952200F39E8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UITestCases;
+			packageProductDependencies = (
+				189292ED2994B34600D0D2D9 /* SDWebImageSwiftUI */,
+			);
+			productName = UITestCases;
+			productReference = 189D27B52983952200F39E8D /* UITestCases.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -294,6 +374,10 @@
 						TestTargetID = 1871CEFA296EA06F00ACCA63;
 					};
 					1871CF14296EA07100ACCA63 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 1871CEFA296EA06F00ACCA63;
+					};
+					189D27B42983952200F39E8D = {
 						CreatedOnToolsVersion = 14.0;
 						TestTargetID = 1871CEFA296EA06F00ACCA63;
 					};
@@ -318,6 +402,7 @@
 				1871CEFA296EA06F00ACCA63 /* SwiftUiTemplate */,
 				1871CF0A296EA07100ACCA63 /* SwiftUiTemplateTests */,
 				1871CF14296EA07100ACCA63 /* SwiftUiTemplateUITests */,
+				189D27B42983952200F39E8D /* UITestCases */,
 			);
 		};
 /* End PBXProject section */
@@ -346,6 +431,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		189D27B32983952200F39E8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -354,12 +446,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D097BA296EBCAD0083B171 /* SearchViewModel.swift in Sources */,
+				1890FFC829801BB500D2C4B3 /* Endpoint.swift in Sources */,
 				1871CF2F296EA15200ACCA63 /* SearchPageView.swift in Sources */,
 				18D097B8296EA5780083B171 /* NetworkManager.swift in Sources */,
+				1890FFCE29801C0400D2C4B3 /* ApiManager.swift in Sources */,
+				1890FFD029801C3E00D2C4B3 /* ApiServiceProtocol.swift in Sources */,
 				186BC801297693EC00671D44 /* Extensions.swift in Sources */,
 				1871CEFF296EA06F00ACCA63 /* SwiftUiTemplateApp.swift in Sources */,
 				1871CF2D296EA12500ACCA63 /* SearchItemView.swift in Sources */,
 				188F5A24296FD1B8001BABF2 /* SearchDataModel.swift in Sources */,
+				1890FFCA29801BD200D2C4B3 /* ItunesEndPoint.swift in Sources */,
+				1890FFCC29801BEC00D2C4B3 /* NetworkError.swift in Sources */,
 				186BC7FE29764BD300671D44 /* MusicDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,10 +465,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				189292F22994B85E00D0D2D9 /* ItunesEndPoint.swift in Sources */,
+				189292F12994B85B00D0D2D9 /* Endpoint.swift in Sources */,
+				189292F42994B86500D0D2D9 /* ApiManager.swift in Sources */,
+				189292F02994B80F00D0D2D9 /* NetworkManager.swift in Sources */,
+				189292F52994B86800D0D2D9 /* ApiServiceProtocol.swift in Sources */,
 				187C102E29797F9C0025119C /* SearchViewModel.swift in Sources */,
 				187C103129797FA90025119C /* Extensions.swift in Sources */,
 				187C102F29797FA00025119C /* SearchDataModel.swift in Sources */,
-				187C103029797FA40025119C /* NetworkManager.swift in Sources */,
+				189292F32994B86300D0D2D9 /* NetworkError.swift in Sources */,
 				1871CF10296EA07100ACCA63 /* SwiftUiTemplateTests.swift in Sources */,
 				187C102D29797DC30025119C /* TestCases.swift in Sources */,
 			);
@@ -383,6 +485,28 @@
 			files = (
 				1871CF1C296EA07100ACCA63 /* SwiftUiTemplateUITestsLaunchTests.swift in Sources */,
 				1871CF1A296EA07100ACCA63 /* SwiftUiTemplateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		189D27B12983952200F39E8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				189292E62994028700D0D2D9 /* ApiManager.swift in Sources */,
+				189292EA299402B500D0D2D9 /* SearchPageView.swift in Sources */,
+				189292E42994027C00D0D2D9 /* ItunesEndPoint.swift in Sources */,
+				189292E72994028A00D0D2D9 /* ApiServiceProtocol.swift in Sources */,
+				189292E52994028100D0D2D9 /* NetworkError.swift in Sources */,
+				189292E9299402AB00D0D2D9 /* SearchDataModel.swift in Sources */,
+				189292EB299402B800D0D2D9 /* SearchItemView.swift in Sources */,
+				189292E22994027400D0D2D9 /* NetworkManager.swift in Sources */,
+				189D27BA2983952200F39E8D /* UITestCasesLaunchTests.swift in Sources */,
+				189292E8299402A800D0D2D9 /* SearchViewModel.swift in Sources */,
+				189292EF2994B35C00D0D2D9 /* Extensions.swift in Sources */,
+				189292E1299400DC00D0D2D9 /* TemplateUITests.swift in Sources */,
+				189D27B82983952200F39E8D /* UITestCases.swift in Sources */,
+				189292E32994027900D0D2D9 /* Endpoint.swift in Sources */,
+				189292EC299402BB00D0D2D9 /* MusicDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +770,38 @@
 			};
 			name = Release;
 		};
+		189D27BD2983952200F39E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wednesday.UITestCases;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftUiTemplate;
+			};
+			name = Debug;
+		};
+		189D27BE2983952200F39E8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wednesday.UITestCases;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftUiTemplate;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -685,6 +841,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		189D27BF2983952200F39E8D /* Build configuration list for PBXNativeTarget "UITestCases" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				189D27BD2983952200F39E8D /* Debug */,
+				189D27BE2983952200F39E8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -705,6 +870,11 @@
 			productName = SDWebImageSwiftUI;
 		};
 		188F5A2729701AC3001BABF2 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 188F5A2629701AC3001BABF2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+		189292ED2994B34600D0D2D9 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 188F5A2629701AC3001BABF2 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;

@@ -92,3 +92,30 @@ enum WrapperType: String, Codable {
     case track
     case audioBook = "audiobook"
 }
+
+
+
+
+
+class Person{
+    
+    var age:Int!
+    var name:String = "n"
+    var address: String!
+    
+    init(){
+        
+    }
+    
+    init(n:String,a:Int,add:String){
+        name = n
+        age = a
+        address = add
+    }
+}
+
+class Player{
+    
+    var neeraj = Person()
+    var nisha = Person.init(n: "m", a: 8, add: "jhjhb")
+}
