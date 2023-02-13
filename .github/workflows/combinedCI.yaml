@@ -38,7 +38,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Build and Test
         run:
-          xcodebuild -project SwiftUITemplate.xcodeproj -scheme Dev -destination 'platform=iOS Simulator,name=iPhone 12,OS=16.2'  -sdk macosx clean build test
+          xcodebuild -project SwiftUITemplate.xcodeproj -scheme Dev -destination 'platform=iOS Simulator,name=iPhone 11'  -sdk macosx clean build test
       - name: Codecov
         uses: codecov/codecov-action@v2
         with:
