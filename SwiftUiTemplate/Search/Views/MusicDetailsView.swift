@@ -19,12 +19,12 @@ struct MusicDetailsView: View {
                         .resizable()
                         .scaledToFit()
                     Group {
-                        Text("Name: \(model?.trackName ?? "")")
-                        Text("Censored name: \(model?.collectionCensoredName ?? "")")
-                        Text("Collection Price: \(model?.collectionPrice ?? 0.0)")
-                        Text("Description: \(model?.longDescription ?? "")")
-                        Text("Release Date: \(getDate(date: model?.releaseDate ?? ""))")
-                        Text("Advisory Rating: \(model?.contentAdvisoryRating ?? "")")
+                        Text("Name : \(model?.trackName ?? "")")
+                        Text("Censored name : \(model?.collectionCensoredName ?? "")")
+                        Text("Collection Price : \(model?.collectionPrice ?? 0.0)")
+                        Text("Description : \(model?.longDescription ?? "")")
+                        Text("Release Date : \(getDate(date: model?.releaseDate ?? ""))")
+                        Text("Advisory Rating : \(model?.contentAdvisoryRating ?? "")")
                     }.padding()
                 }
             }
