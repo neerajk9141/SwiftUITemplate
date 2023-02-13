@@ -25,7 +25,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_14.0.app && /usr/bin/xcodebuild -version
       - name: run tests
         run: | 
-          xcodebuild test -project SwiftUiTemplate.xcodeproj -scheme Dev -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild test -project SwiftUiTemplate.xcodeproj -scheme SwiftUITemplateDev -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
           
   SwiftFormat:
     runs-on: macos-latest
@@ -33,12 +33,12 @@ jobs:
       - name: Select Xcode version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: ${{ matrix.xcode }}
+          xcode-version: xcode-latest
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build and Test
         run:
-          xcodebuild test -project SwiftUITemplate.xcodeproj -scheme Dev -destination 'platform=iOS Simulator,name=iPhone 11,OS=16.2'  -sdk macosx clean build
+          xcodebuild test -project SwiftUITemplate.xcodeproj -scheme SwiftUITemplateDev -destination 'platform=iOS Simulator,name=iPhone 11,OS=16.2' -enableCodeCoverage YES -sdk macosx clean build
       - name: Codecov
         uses: codecov/codecov-action@v2
         with:
