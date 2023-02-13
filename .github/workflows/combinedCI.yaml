@@ -25,6 +25,9 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_14.0.app && /usr/bin/xcodebuild -version
       - name: run tests
         run: |
+          cd SwiftUiTemplate/Vendor &&
+          java -jar wiremock-jre8-standalone-2.31.0.jar --port 9999 --verbose &&
+          cd ../.. && 
           xcodebuild test -project SwiftUiTemplate.xcodeproj -scheme Dev -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
           
   SwiftFormat:
