@@ -25,10 +25,8 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_14.0.app && /usr/bin/xcodebuild -version
       - name: Go to Vendor directory, start wiremock and run tests
         run: |
-          cd Template/Vendor &&
-          java -jar wiremock-jre8-standalone-2.31.0.jar --port 9999 --verbose &&
           cd ../.. && 
-          xcodebuild test -scheme Dev\ SwiftUITemplate -workspace SwiftUITemplate.xcworkspace  -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild test -scheme SwiftUITemplate -project SwiftUITemplate.xcodeproj  -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
           
   macos:
     runs-on: macos-latest
@@ -41,7 +39,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Build and Test
         run:
-          xcodebuild -project SwiftUITemplate.xcodeproj -scheme "SwiftFormat (Framework)" -sdk macosx clean build test
+          xcodebuild -project SwiftUITemplate.xcodeproj -scheme "SwiftUiTemplate" -sdk macosx clean build test
       - name: Codecov
         uses: codecov/codecov-action@v2
         with:
