@@ -25,10 +25,9 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_14.0.app && /usr/bin/xcodebuild -version
       - name: Go to Vendor directory, start wiremock and run tests
         run: |
-          cd ../.. && 
-          xcodebuild test -scheme Dev\ SwiftUITemplate -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild test -scheme Dev\ SwiftUITemplate -project SwiftUiTemplate.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=16.0' -enableCodeCoverage YES | xcpretty && exit ${PIPESTATUS[0]}
           
-  macos:
+  SwiftFormat:
     runs-on: macos-latest
     steps:
       - name: Select Xcode version
