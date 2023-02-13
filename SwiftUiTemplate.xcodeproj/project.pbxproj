@@ -26,14 +26,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1871CF0C296EA07100ACCA63 /* PBXContainerItemProxy */ = {
+		1871CF16296EA07100ACCA63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1871CEF3296EA06F00ACCA63 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1871CEFA296EA06F00ACCA63;
 			remoteInfo = SwiftUiTemplate;
 		};
-		1871CF16296EA07100ACCA63 /* PBXContainerItemProxy */ = {
+		1883AB78299AF48B00572B8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1871CEF3296EA06F00ACCA63 /* Project object */;
 			proxyType = 1;
@@ -244,7 +244,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				1871CF0D296EA07100ACCA63 /* PBXTargetDependency */,
+				1883AB79299AF48B00572B8D /* PBXTargetDependency */,
 			);
 			name = SwiftUiTemplateTests;
 			packageProductDependencies = (
@@ -403,15 +403,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1871CF0D296EA07100ACCA63 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1871CEFA296EA06F00ACCA63 /* SwiftUiTemplate */;
-			targetProxy = 1871CF0C296EA07100ACCA63 /* PBXContainerItemProxy */;
-		};
 		1871CF17296EA07100ACCA63 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1871CEFA296EA06F00ACCA63 /* SwiftUiTemplate */;
 			targetProxy = 1871CF16296EA07100ACCA63 /* PBXContainerItemProxy */;
+		};
+		1883AB79299AF48B00572B8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1871CEFA296EA06F00ACCA63 /* SwiftUiTemplate */;
+			targetProxy = 1883AB78299AF48B00572B8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -592,6 +592,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -605,7 +606,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUiTemplate.app$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftUiTemplate";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUiTemplate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftUiTemplate";
 			};
 			name = Debug;
 		};
@@ -613,6 +614,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -626,7 +628,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUiTemplate.app$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftUiTemplate";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUiTemplate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftUiTemplate";
 			};
 			name = Release;
 		};
