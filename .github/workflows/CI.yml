@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - Combined
   pull_request:
     branches:
-      - main
+      - Combined
 jobs:
   SwiftLint:
     runs-on: ubuntu-latest
