@@ -20,6 +20,34 @@
                ReferencedContainer = "container:SwiftUiTemplate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1871CF0A296EA07100ACCA63"
+               BuildableName = "SwiftUiTemplateTests.xctest"
+               BlueprintName = "SwiftUiTemplateTests"
+               ReferencedContainer = "container:SwiftUiTemplate.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1871CF14296EA07100ACCA63"
+               BuildableName = "SwiftUiTemplateUITests.xctest"
+               BlueprintName = "SwiftUiTemplateUITests"
+               ReferencedContainer = "container:SwiftUiTemplate.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
