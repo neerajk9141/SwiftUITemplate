@@ -28,7 +28,11 @@ struct SearchPageView: View {
                     }.padding()
 
                 } else {
-                    searchText.isEmpty ? Text("No searches performed") : Text("No result found")
+                    if searchText.isEmpty {
+                        Text("No searches performed")
+                    } else {
+                        Text("No result found")
+                    }
                 }
             }
             .navigationTitle("iTunes song Search")

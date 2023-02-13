@@ -46,8 +46,6 @@ final class NetworkManager {
                             req(.failure(decodingError))
                         case let apiError:
                             req(.failure(apiError))
-                        default:
-                            req(.failure(NetworkError.unknownError))
                         }
                     }
                 }, receiveValue: {

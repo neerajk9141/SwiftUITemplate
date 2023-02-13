@@ -23,15 +23,15 @@ struct MusicDetailsView: View {
                         Text("Censored name: \(model?.collectionCensoredName ?? "")")
                         Text("Collection Price: \(model?.collectionPrice ?? 0.0)")
                         Text("Description: \(model?.longDescription ?? "")")
-                        Text("Release Date: \(getDate(date:model?.releaseDate ?? ""))")
+                        Text("Release Date: \(getDate(date: model?.releaseDate ?? ""))")
                         Text("Advisory Rating: \(model?.contentAdvisoryRating ?? "")")
                     }.padding()
                 }
             }
         }
     }
-    
-    func getDate(date: String)->String{
+
+    func getDate (date: String) -> String {
         return date.toDate().toDateString(format: "dd-MM-yyyy HH:mm")
     }
 }
