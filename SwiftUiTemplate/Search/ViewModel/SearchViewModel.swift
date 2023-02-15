@@ -8,17 +8,13 @@
 import Combine
 import Foundation
 
-protocol ApiServiceProtocol {
-    func getSongs(for text: String) -> Future<SearchDataModel?, Error>
-}
-
 class SearchViewModel: ObservableObject {
     @Published var model: SearchDataModel?
     @Published var alertNotifier: String?
     private var cancellables = Set<AnyCancellable>()
 
     func getItunesItems(text: String) {
-        ApiManager().getSongs(for: text)
+        ApiManager().getSongs(for: text.lowercased())
             .sink { completion in
                 switch completion {
                 case let .failure(error):
@@ -28,6 +24,7 @@ class SearchViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] data in
                 self?.model = data
+                self?.objectWillChange.send()
             }.store(in: &cancellables)
     }
 }

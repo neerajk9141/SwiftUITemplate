@@ -11,7 +11,7 @@ import SwiftUI
 struct SearchPageView: View {
     @State private var searchText = ""
     @State private var showAlert = false
-    var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = SearchViewModel()
 
     var body: some View {
         NavigationStack {
