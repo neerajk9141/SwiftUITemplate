@@ -51,8 +51,6 @@ jobs:
           key: ${{ runner.os }}-home-bin-${{ hashFiles('packages/Tools/Package.resolved') }}
           restore-keys: |
             ${{ runner.os }}-home-bin-
-      - name: Install Swift tools
-        run: make swift-tools
         
       - name: Run swiftformat
         run:
