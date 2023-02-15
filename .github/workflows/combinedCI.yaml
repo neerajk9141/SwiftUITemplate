@@ -55,9 +55,11 @@ jobs:
       - name: Run swiftformat
         run:
           cd SwiftUITemplate &&
-          swiftformat . &&
-          cd ../.. && 
-          xcodebuild -project SwiftUITemplate.xcodeproj -scheme SwiftUiTemplateDev -destination 'platform=iOS Simulator,name=iPhone 11,OS=16.2' -sdk macosx clean build
-        
+          swiftformat .
       - name: Verify formatted code is unchanged
         run: git diff --exit-code HEAD
+        
+      - name: Build
+        run: 
+          xcodebuild -project SwiftUITemplate.xcodeproj -scheme SwiftUiTemplateDev -destination 'platform=iOS Simulator,name=iPhone 11,OS=16.2' -sdk macosx clean build
+
