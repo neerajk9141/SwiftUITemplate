@@ -31,7 +31,7 @@ struct MusicDetailsView: View {
         }
     }
 
-    func getDate (date: String) -> String {
+    func getDate(date: String) -> String {
         return date.toDate().toDateString(format: "dd-MM-yyyy HH:mm")
     }
 }
