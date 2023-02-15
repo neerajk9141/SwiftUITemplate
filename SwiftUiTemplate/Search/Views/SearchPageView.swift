@@ -30,7 +30,7 @@ struct SearchPageView: View {
                         .backgroundStyle(Color.gray.opacity(0.4))
 
                 } else {
-                        EmptySearchView(text: searchText.isEmpty ? "No searches performed" : "No result found")
+                    EmptySearchView(text: searchText.isEmpty ? "No searches performed" : "No result found")
                 }
             }
             .navigationTitle("iTunes song Search")
