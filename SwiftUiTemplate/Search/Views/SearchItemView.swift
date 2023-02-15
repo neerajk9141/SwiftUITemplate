@@ -15,15 +15,23 @@ struct SearchItemView: View {
         HStack {
             if let url = URL(string: model?.artworkUrl60 ?? "") {
                 WebImage(url: url)
+                    .placeholder(Image(systemName: "camera.fill"))
                     .resizable()
-                    .frame(maxWidth: 50, maxHeight: 60)
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(30)
             }
 
             VStack(alignment: .leading) {
                 Text(model?.trackName ?? "")
-                Text(model?.shortDescription ?? "")
+                    .font(.system(size: 16))
+                    .bold()
+                    .foregroundColor(Color.black)
+                Text(model?.artistName ?? "")
+                    .font(.caption)
+                    .foregroundColor(Color.gray)
             }
         }
+        .padding(5)
     }
 }
 

@@ -88,6 +88,7 @@ enum Kind: String, Codable {
     case featureMovie = "feature-movie"
     case song
     case tvEpisode = "tv-episode"
+    case musicVideo = "music-video"
 }
 
 enum WrapperType: String, Codable {

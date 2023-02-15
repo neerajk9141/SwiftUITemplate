@@ -27,7 +27,9 @@ class SearchViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { [weak self] data in
+                self?.model = nil
                 self?.model = data
+                self?.objectWillChange.send()
             }.store(in: &cancellables)
     }
 }

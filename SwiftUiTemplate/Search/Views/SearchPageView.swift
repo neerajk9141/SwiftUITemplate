@@ -11,7 +11,7 @@ import SwiftUI
 struct SearchPageView: View {
     @State private var searchText = ""
     @State private var showAlert = false
-    var viewModel = SearchViewModel()
+    @ObservedObject var viewModel = SearchViewModel()
 
     var body: some View {
         NavigationStack {
@@ -23,16 +23,14 @@ struct SearchPageView: View {
                                 MusicDetailsView(model: model)
                             } label: {
                                 SearchItemView(model: model)
+                                    .cornerRadius(12)
                             }.buttonStyle(PlainButtonStyle())
                         }
                     }.padding()
+                        .backgroundStyle(Color.gray.opacity(0.4))
 
                 } else {
-                    if searchText.isEmpty {
-                        Text("No searches performed")
-                    } else {
-                        Text("No result found")
-                    }
+                        EmptySearchView(text: searchText.isEmpty ? "No searches performed" : "No result found")
                 }
             }
             .navigationTitle("iTunes song Search")
