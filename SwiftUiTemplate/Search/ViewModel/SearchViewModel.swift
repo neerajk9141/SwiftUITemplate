@@ -13,8 +13,8 @@ class SearchViewModel: ObservableObject {
     @Published var alertNotifier: String?
     private var cancellables = Set<AnyCancellable>()
 
-    func getItunesItems(text: String) {
-        ApiManager().getSongs(for: text.lowercased())
+    func getItunesItems(text: String) async {
+        await ApiManager().getSongs(for: text.lowercased())
             .sink { completion in
                 switch completion {
                 case let .failure(error):

@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol ApiServiceProtocol {
-    func getSongs(for text: String) -> Future<SearchDataModel?, Error>
+    func getSongs(for text: String) async -> Future<SearchDataModel?, Error>
 }

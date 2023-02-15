@@ -36,13 +36,17 @@ struct SearchPageView: View {
         .searchable(text: $searchText, prompt: "Search songs on iTunes.")
         .autocorrectionDisabled(true)
         .onChange(of: searchText) { _ in
-            viewModel.getItunesItems(text: searchText)
+            Task.init(operation: {
+                await viewModel.getItunesItems(text: searchText)
+            })
         }
         .onChange(of: viewModel.alertNotifier, perform: { _ in
             showAlert.toggle()
         })
         .onSubmit(of: .search) {
-            viewModel.getItunesItems(text: searchText)
+            Task.init(operation: {
+                await viewModel.getItunesItems(text: searchText)
+            })
         }
         .alert(viewModel.alertNotifier ?? "", isPresented: $showAlert) {}
     }
