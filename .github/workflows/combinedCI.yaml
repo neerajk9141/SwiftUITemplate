@@ -39,7 +39,7 @@ jobs:
       - name: Build and Test
         run:
           cd SwiftUITemplate &&
-          swiftformat SwiftUITemplate &&
+          swiftformat . &&
           cd ../.. && 
           xcodebuild -project SwiftUITemplate.xcodeproj -scheme SwiftUiTemplateDev -destination 'platform=iOS Simulator,name=iPhone 11,OS=16.2' -sdk macosx clean build
       - name: Codecov
