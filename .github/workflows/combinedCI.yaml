@@ -36,13 +36,29 @@ jobs:
           xcode-version: ${{ matrix.xcode }}
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Build and Test
+        
+      - name: Cache packages/Tools/.build
+        uses: actions/cache@v1
+        with:
+          path: packages/Tools/.build
+          key: ${{ runner.os }}-swift-tools-build-${{ hashFiles('packages/Tools/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-swift-tools-build-
+      - name: Cache ~/bin
+        uses: actions/cache@v1
+        with:
+          path: ~/bin
+          key: ${{ runner.os }}-home-bin-${{ hashFiles('packages/Tools/Package.resolved') }}
+          restore-keys: |
+            ${{ runner.os }}-home-bin-
+        
+      - name: Run swiftformat
         run:
           cd SwiftUITemplate &&
-          swiftformat . &&
-          cd ../.. && 
+          swiftformat .
+      - name: Verify formatted code is unchanged
+        run: git diff --exit-code HEAD
+        
+      - name: Build
+        run: 
           xcodebuild -project SwiftUITemplate.xcodeproj -scheme SwiftUiTemplateDev -destination 'platform=iOS Simulator,name=iPhone 11,OS=16.2' -sdk macosx clean build
-      - name: Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          env_vars: MD_APPLE_SDK_ROOT,RUNNER_OS,RUNNER_ARCH
