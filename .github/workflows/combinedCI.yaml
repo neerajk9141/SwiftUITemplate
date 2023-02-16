@@ -36,22 +36,6 @@ jobs:
           xcode-version: ${{ matrix.xcode }}
       - name: Checkout
         uses: actions/checkout@v2
-        
-      - name: Cache packages/Tools/.build
-        uses: actions/cache@v1
-        with:
-          path: packages/Tools/.build
-          key: ${{ runner.os }}-swift-tools-build-${{ hashFiles('packages/Tools/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-swift-tools-build-
-      - name: Cache ~/bin
-        uses: actions/cache@v1
-        with:
-          path: ~/bin
-          key: ${{ runner.os }}-home-bin-${{ hashFiles('packages/Tools/Package.resolved') }}
-          restore-keys: |
-            ${{ runner.os }}-home-bin-
-        
       - name: Run swiftformat
         run:
           cd SwiftUITemplate &&
